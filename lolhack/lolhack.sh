@@ -13,11 +13,21 @@ dbfile=/media/games/regional.ori.db
 if [ ! -f "$dbfile" ]; then
     cp /gaadata/databases/regional.db /media/games/regional.ori.db 
 fi 
+
 #install our custom db
 cp /media/games/custom.db /gaadata/databases/regional.db
 
 #sync usb drive
 sync
+
+#Execute PCSX ESC menu while pressing select+triangle on controller
+sleep 5s
+export PCSX_ESC_KEY=2
+killall ui_menu
+sleep 5s
+cd /data/AppData/sony/pcsx
+/usr/sony/bin/ui_menu --power-off-enable
+sync 
 
 # kill the ui process
 killall ui_menu
