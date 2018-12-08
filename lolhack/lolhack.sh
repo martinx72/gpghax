@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #link the usb drive dirs into the /gaadata
 cd /media/games
 for D in *; do
@@ -6,6 +8,11 @@ for D in *; do
     fi
 done
 
+#backup the original db file from the console itself 
+dbfile=/media/games/regional.ori.db
+if [ ! -f "$dbfile" ]; then
+    cp /gaadata/databases/regional.db /media/games/regional.ori.db 
+fi 
 #install our custom db
 cp /media/games/custom.db /gaadata/databases/regional.db
 
