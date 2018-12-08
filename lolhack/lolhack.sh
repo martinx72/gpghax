@@ -9,13 +9,15 @@ for D in *; do
 done
 
 #backup the original db file from the console itself 
-dbfile=/media/games/regional.ori.db
-if [ ! -f "$dbfile" ]; then
+oridbfile=/media/games/regional.ori.db
+if [ ! -f "$oridbfile" ]; then
     cp /gaadata/databases/regional.db /media/games/regional.ori.db 
 fi 
 
 #install our custom db
-cp /media/games/custom.db /gaadata/databases/regional.db
+customdbfile=/media/games/custom.db
+if [ -f "$customdbfile" ]; then
+    cp /media/games/custom.db /gaadata/databases/regional.db
 
 #sync usb drive
 sync
