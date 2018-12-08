@@ -8,8 +8,8 @@ What if PlayStation Classic, but with a game library that's actually fun to play
 
 # 1. Adding Custom Games:
 
-*for Japanese PSC console, please rename the custom.jp.db file as custom.db
-*for U.S. PSC console, please rename the custom.us.db as custom.db
+* for Japanese PSC console, please rename games/custom.jp.db file to games/custom.db
+* for U.S. PSC console, please rename games/custom.us.db to games/custom.db
 
 
 Open games/custom.db in an SQLite Editor of your choice.
