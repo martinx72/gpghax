@@ -8,7 +8,7 @@ for D in *; do
     fi
 done
 
-#backup the original db file from the console itself 
+#backup the original db file from the console itself, added by MarTinX
 oridbfile=/media/games/regional.ori.db
 if [ ! -f "$oridbfile" ]; then
     cp /gaadata/databases/regional.db /media/games/regional.ori.db 
@@ -22,7 +22,7 @@ if [ -f "$customdbfile" ]; then
 #sync usb drive
 sync
 
-#Execute PCSX ESC menu while pressing select+triangle on controller
+#Execute PCSX ESC menu while pressing select+triangle on controller, added by MarTinX
 sleep 5s
 export PCSX_ESC_KEY=2
 killall ui_menu
