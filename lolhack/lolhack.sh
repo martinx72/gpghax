@@ -18,6 +18,7 @@ fi
 customdbfile=/media/games/custom.db
 if [ -f "$customdbfile" ]; then
     cp /media/games/custom.db /gaadata/databases/regional.db
+fi
 
 #sync usb drive
 sync
