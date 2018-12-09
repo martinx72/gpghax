@@ -53,7 +53,7 @@ madmonkey, DanTheMan827, skogaby
 
 ----- 我是分隔線 ----- 
 </br></br>
-#gpghax - 日文主機的安裝說明 by MarTinX
+# gpghax - 日文主機的安裝說明 by MarTinX
 > 免則聲明: 以下的操作，可能會導致你的主機變磚，如果你不清楚了解他如何正確運作請勿使用本工具！
 </br></br>
 #如何操作:
@@ -77,7 +77,7 @@ madmonkey, DanTheMan827, skogaby
 如果要把系統復原，只需要在步驟3把 regional.jpn.ori.db(日規) 或是 regional.us.ori.db(美規) 改名為 custom.db 接著執行步驟8, 即可恢復。
 
 
-#Note:
+# Note:
 小編不只幫原作者追加了日文主機的支援，還追加了可以使用手把即可開啟神秘的 PCSX 設定選單的功能。</br>
 進入遊戲之後，可透過同時按壓手把上的 Select + ^ 兩個按鈕開啟選單。再也不用找特殊鍵盤而傷腦筋了！</br>
 </br></br>
