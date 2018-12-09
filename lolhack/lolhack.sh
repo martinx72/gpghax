@@ -26,17 +26,17 @@ sync
 #Execute PCSX ESC menu while pressing select+triangle on controller, added by MarTinX
 sleep 5s
 export PCSX_ESC_KEY=2
-killall ui_menu
-sleep 5s
-cd /data/AppData/sony/pcsx
-/usr/sony/bin/ui_menu --power-off-enable
-sync 
 
 # kill the ui process
 killall ui_menu
 
+sleep 5s
+cd /data/AppData/sony/pcsx
+
 # restart ui
-/usr/sony/bin/ui_menu
+/usr/sony/bin/ui_menu --power-off-enable
+sync 
+
 
 # sleep forever so the usb is never unmounted
 while :; do sleep 10; done
