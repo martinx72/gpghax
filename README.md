@@ -74,7 +74,7 @@ madmonkey, DanTheMan827, skogaby
 </br></br></br>
 
 
-如果要把系統復原，只需要在步驟3把 regional.jpn.ori.db(日規) 或是 regional.us.ori.db(美規) 改名為 custom.db 接著執行步驟8, 即可恢復。
+如果要把系統復原，只需要在步驟3把 regional.jpn.ori.db(日規) 或是 regional.us.ori.db(美規) 改名為 custom.db 接著執行步驟8步驟, 即可恢復。
 
 
 # Note:
