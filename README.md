@@ -73,6 +73,10 @@ madmonkey, DanTheMan827, skogaby
 10. 如果一切順利，開機後就會看到這款追加的遊戲出現在主機的畫面中了！ Happy Hacking.
 </br></br></br>
 
+
+如果要把系統復原，只需要在步驟3把 regional.jpn.ori.db(日規) 或是 regional.us.ori.db(美規) 改名為 custom.db 接著執行步驟8, 即可恢復。
+
+
 #Note:
 小編不只幫原作者追加了日文主機的支援，還追加了可以使用手把即可開啟神秘的 PCSX 設定選單的功能。</br>
 進入遊戲之後，可透過同時按壓手把上的 Select + ^ 兩個按鈕開啟選單。再也不用找特殊鍵盤而傷腦筋了！</br>
