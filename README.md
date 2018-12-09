@@ -78,5 +78,7 @@ madmonkey, DanTheMan827, skogaby
 
 電玩怪盜團FB: https://www.facebook.com/groups/GameKaito/
 
+Result demo: https://youtu.be/IdyZpvv_jYQ
+
 
 
