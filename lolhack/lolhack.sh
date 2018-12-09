@@ -33,10 +33,10 @@ killall ui_menu
 sleep 5s
 cd /data/AppData/sony/pcsx
 
-# restart ui
-/usr/sony/bin/ui_menu --power-off-enable
 sync 
 
+# restart ui
+/usr/sony/bin/ui_menu --power-off-enable
 
 # sleep forever so the usb is never unmounted
 while :; do sleep 10; done
