@@ -1,0 +1,81 @@
+#!/bin/sh
+COUNT=1
+COUNT_MAX=100
+
+PCSX_DIR="/data/AppData/sony/pcsx"
+
+
+if [ ! -e $PCSX_DIR/.pcsx ]; then
+    echo ".pcsx directory not exist"
+    mkdir -p $PCSX_DIR/.pcsx
+fi
+
+if [ ! -e $PCSX_DIR/.updated_pcsxcfg ]; then
+    if [ -e /gaadata/geninfo/REGION ]; then
+        REGION=$(cat /gaadata/geninfo/REGION|head -1|head -c 8)
+    fi
+    if [ -e /usr/sony/bin/share/gaadata/$REGION/pcsx-cfg.tar.gz ]; then
+        echo "new pcsx.cfg files found"
+        mount -o remount,rw /gaadata
+        tar xzf /usr/sony/bin/share/gaadata/$REGION/pcsx-cfg.tar.gz -C /gaadata
+        mount -o remount,ro /gaadata
+        echo "new pcsx.cfg updated" > $PCSX_DIR/.updated_pcsxcfg
+    fi
+    if [ ! -e /data/AppData/sony/ui/user.pre -a -e /usr/sony/bin/share/gaadata/$REGION/user.pre ]; then
+        echo "user.pre not found"
+        cp /usr/sony/bin/share/gaadata/$REGION/user.pre /data/AppData/sony/ui/
+	chmod 664 /data/AppData/sony/ui/user.pre
+    fi
+    sync
+fi
+
+
+while [ $COUNT -le $COUNT_MAX ]
+do
+if [ ! -e /gaadata/$COUNT/pcsx.cfg ]; then
+    echo "/gaadata/$COUNT/pcsx.cfg not found"
+    COUNT=`expr $COUNT + 1`
+    continue
+fi
+if [ ! -e $PCSX_DIR/$COUNT/.pcsx/pcsx.cfg ]; then
+    echo "pcsx.cfg file not exist in $COUNT directory"
+    if [ ! -e $PCSX_DIR/$COUNT/.pcsx ]; then
+        echo ".pcsx directory not exist in $COUNT directory"
+        mkdir -p $PCSX_DIR/$COUNT/.pcsx
+    fi
+    ln -sf /gaadata/$COUNT/pcsx.cfg $PCSX_DIR/$COUNT/.pcsx
+elif [ "$(stat -c%s $PCSX_DIR/$COUNT/.pcsx/pcsx.cfg)" -eq "0" ]; then
+    echo "pcsx.cfg file is zero-length in $COUNT directory"
+    rm -f $PCSX_DIR/$COUNT/.pcsx/pcsx.cfg
+    ln -sf /gaadata/$COUNT/pcsx.cfg $PCSX_DIR/$COUNT/.pcsx
+fi
+COUNT=`expr $COUNT + 1`
+done
+
+BIOS_SRC=/gaadata/system/bios
+if [ ! -e $BIOS_SRC ]; then
+    BIOS_SRC=/usr/sony/bin/bios
+fi
+
+if [ ! -e $PCSX_DIR/bios/ ]; then
+    echo "bios directory not exist"
+    ln -sf $BIOS_SRC $PCSX_DIR
+elif [ "$(stat -c%s $PCSX_DIR/bios/)" -eq "0" ]; then
+    echo "bios directory is zero-length"
+    rm -f $PCSX_DIR/bios
+    ln -sf $BIOS_SRC $PCSX_DIR
+fi
+
+PLUGINS_SRC=/usr/sony/bin/plugins
+if [ ! -e $PCSX_DIR/plugins/ ]; then
+    echo "plugins directory not exist"
+    ln -sf $PLUGINS_SRC $PCSX_DIR
+elif [ "$(stat -c%s $PCSX_DIR/plugins/)" -eq "0" ]; then
+    echo "plugins directory is zero-length"
+    rm -f $PCSX_DIR/plugins
+    ln -sf $PLUGINS_SRC $PCSX_DIR
+fi
+
+sync
+sync
+
