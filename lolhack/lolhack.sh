@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 #link the usb drive dirs into the /gaadata
 cd /media/games
@@ -35,8 +35,14 @@ cd /data/AppData/sony/pcsx
 
 sync 
 
+sonyapp_copylink_path=/media/games/sonyapp-copylink
+if [ -f "$sonyapp_copylink_path" ]; then
+  /media/games/sonyapp-copylink
+fi
+
 # restart ui
 /usr/sony/bin/ui_menu --power-off-enable
 
 # sleep forever so the usb is never unmounted
 while :; do sleep 10; done
+
