@@ -91,5 +91,6 @@ madmonkey, DanTheMan827, skogaby
 </br></br>
 電玩怪盜團FB: https://www.facebook.com/groups/GameKaito/</br>
 </br>
-成果展示: https://youtu.be/IdyZpvv_jYQ
+示範教學: https://youtu.be/tKc9QP62BdU</br>
+成果展示: https://youtu.be/IdyZpvv_jYQ</br>
 
