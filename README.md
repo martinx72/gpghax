@@ -74,9 +74,17 @@ madmonkey, DanTheMan827, skogaby
 </br></br></br>
 
 
-如果要把系統復原，只需要在步驟3把 regional.jpn.ori.db(日規) 或是 regional.us.ori.db(美規) 改名為 custom.db 接著執行步驟8步驟, 即可恢復。
+如果要把系統復原，只需要在步驟3把 \games\regional.jpn.ori.db(日規) 或是 \games\regional.us.ori.db(美規) 改名為 \games\custom.db 接著執行步驟8步驟, 即可恢復。
+</br></br>
 
-
+如何追加第22, 第23等甚至到第25個遊戲的方法，上方的英文教學有寫到，須透過編輯軟體將 custom.db 內之資料庫檔案修改，對一般使用者來說算是稍微複雜了點，屬於較為進階的操作，請務必詳讀英文說明再自行操作！</br>
+</br>
+</br>
+此外，<b>如果需要把主畫面的檔案擴充超過25個</b>（原生的系統限制為25個，超過則會異常）</br>
+僅需於上述的步驟3內，把 \games\sonyapp-copylink.50 改名為 \games\sonyapp-copylink，上限即可增加至50個。</br>
+若50個還是不夠用，請把\games\sonyapp-copylink.100 改名為 \games\sonyapp-copylink，上限即可增加至100個。</br>
+</br>
+</br>
 # Note:
 小編不只幫原作者追加了日文主機的支援，還追加了可以使用手把即可開啟神秘的 PCSX 設定選單的功能。</br>
 進入遊戲之後，可透過同時按壓手把上的 Select + ^ 兩個按鈕開啟選單。再也不用找特殊鍵盤而傷腦筋了！</br>
@@ -84,6 +92,4 @@ madmonkey, DanTheMan827, skogaby
 電玩怪盜團FB: https://www.facebook.com/groups/GameKaito/</br>
 </br>
 成果展示: https://youtu.be/IdyZpvv_jYQ
-
-
 
